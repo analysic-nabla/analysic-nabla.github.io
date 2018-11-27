@@ -1,6 +1,4 @@
-# This is a test page
-
-<h1>Latest Posts</h1>
+<h1>Últimos Posts</h1>
 
 <ul>
   {% for post in site.posts %}
