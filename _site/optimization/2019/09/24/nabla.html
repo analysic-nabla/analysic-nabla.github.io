@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>First Paper | Analysic Nabla</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="First Paper" />
+<meta name="author" content="Luis Gerardo Godfrey Castañeda" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="La noción de Machine Learning o aprendizaje de máquina en español ha tenido un gran auge en esta última década. Sin embargo, dicho tema puede tener sus inicios desdé hace más de de 50 años, por lo cual nos hemos propuesto a dar una curso didáctico con el objetivo que el lector pueda tener un interés mayor sobre estos temas." />
+<meta property="og:description" content="La noción de Machine Learning o aprendizaje de máquina en español ha tenido un gran auge en esta última década. Sin embargo, dicho tema puede tener sus inicios desdé hace más de de 50 años, por lo cual nos hemos propuesto a dar una curso didáctico con el objetivo que el lector pueda tener un interés mayor sobre estos temas." />
+<link rel="canonical" href="http://localhost:4000/optimization/2019/09/24/nabla.html" />
+<meta property="og:url" content="http://localhost:4000/optimization/2019/09/24/nabla.html" />
+<meta property="og:site_name" content="Analysic Nabla" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-24T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"La noción de Machine Learning o aprendizaje de máquina en español ha tenido un gran auge en esta última década. Sin embargo, dicho tema puede tener sus inicios desdé hace más de de 50 años, por lo cual nos hemos propuesto a dar una curso didáctico con el objetivo que el lector pueda tener un interés mayor sobre estos temas.","@type":"BlogPosting","headline":"First Paper","dateModified":"2019-09-24T00:00:00-05:00","datePublished":"2019-09-24T00:00:00-05:00","url":"http://localhost:4000/optimization/2019/09/24/nabla.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.jpg"},"name":"Luis Gerardo Godfrey Castañeda"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/optimization/2019/09/24/nabla.html"},"author":{"@type":"Person","name":"Luis Gerardo Godfrey Castañeda"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=f6be133c6467e15f31219f695210e8e81977ae3c">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">Analysic Nabla</a></h1>
+        
+        
+          <img src="/assets/images/logo.jpg" alt="Logo" />
+        
+
+        <p>Repositorio del blog oficial de Analysic Nabla</p>
+
+        
+        <p class="view"><a href="https://github.com/analysic-nabla/analysic-nabla.github.io">View the Project on GitHub <small>analysic-nabla/analysic-nabla.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+<h1>First Paper</h1>
+<p>24 Sep 2019 - Luis Gerardo Godfrey Castañeda</p>
+
+<p>La noción de Machine Learning o aprendizaje de máquina en español ha tenido un gran auge en esta última década. Sin embargo, dicho tema puede tener sus inicios desdé hace más de  de 50 años, por lo cual nos hemos propuesto a dar una curso didáctico con el objetivo que el lector pueda tener un interés mayor sobre estos temas.</p>
+
+<h3> Ecuación de costos</h3>
+<p>Esta función sera nuestra principal herramienta, nuestro interés principal es que el valor sea el más bajo posible, por lo cuál tendremos que derivar pero no antes de explicar sus elementos.</p>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Costos}
+        L(y,\hat{y})= \sum_{n=1}^{N}y_{n} \log \hat{y}_{n} + (1-y_{n}) \log(1-\hat{y}_{n}) \forall y \in {0,1}
+    \end{equation}</script>
+
+<p>En tenemos <script type="math/tex">\hat{y}</script> la cuál es nuestra estimación del valor y, con la fórmula:</p>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_z}
+    z = w_{0} + w_{1} x_{1} + w_{2} x_{2}  
+    \end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Sigma}
+    \hat{y} = \frac{1}{(1 + \exp(z))}
+    \end{equation}</script>
+
+<p>La cuál es conocida como función sigmoidea la figura 2 nos enseña como se distribuye dicha función.</p>
+
+<p>Sustituyendo  <strong>__</strong>_ en <strong>__</strong> tenemos:</p>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Costos_Sustitucion}
+    L(y,\hat{y})= \sum_{n=1}^{N}y_{n} \log \frac{1}{(1 + \exp(z))} + (1-y_{n}) \log(1- \frac{1}{(1 + \exp(z))})
+    \end{equation}</script>
+
+<p>Nuestro interés principal es encontrar el menor costo posible, lo cuál indica que por propiedades necesitamos minimizar dicha función. En otras palabras, tenemos que derivar la función de costos con base en cada una de las variables <script type="math/tex">w_{0}, w_{1}, w_{2}</script> (todas con valores aleatorios iniciales).</p>
+
+<h3>Derivadas de Ecuación de costos</h3>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Costos_Dw0}
+    \frac{\partial L(y,\hat{y})}{\partial w_{0}} = - \sum_{n=1}^{N} (y_{n} -\hat{y}_{n} )
+    \end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Costos_Dw1}
+    \frac{\partial L(y,\hat{y})}{\partial w_{0}} = - \sum_{n=1}^{N} w_{1} (y_{n} -\hat{y}_{n} )
+    \end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Costos_Dw2}
+    \frac{\partial L(y,\hat{y})}{\partial w_{0}} = - \sum_{n=1}^{N} w_{2} (y_{n} -\hat{y}_{n} )
+    \end{equation}</script>
+
+<p>Esta sección es de gran importancia dado que nuestras variables <script type="math/tex">w_{0}, w_{1}, w_{2}</script> se irán actualizando cada vez que se vayan leyendo los datos.</p>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_w0}
+    w_{0} = w_{0} + \alpha  - \sum_{n=1}^{N} (y_{n} -\hat{y}_{n} )\forall \alpha \in R
+    \end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_w1}
+    w_{1} = w_{1} + \alpha  - \sum_{n=1}^{N} w_{1} (y_{n} -\hat{y}_{n} ) \forall \alpha \in R
+    \end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_w2}
+    w_{2} = w_{2} + \alpha  - \sum_{n=1}^{N} w_{2} (y_{n} -\hat{y}_{n} )
+        \forall \alpha \in R
+    \end{equation}</script>
+
+<h3>Estimación de valores</h3>
+
+<p>Ahora que ya sabemos que nuestros valores <script type="math/tex">w_{0}, w_{1}, w_{2}</script> irán cambiando dependiendo de la cantidad de datos que tenemos acumulados podemos recordar la ecuación _____ podemos despejar y que nos quede lo siguiente.</p>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Y1}
+    Y_{1} = \frac{X_{1}w_{1}}{w_{2}}
+    \end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}\label{F_Y2}
+    Y_{2} = \frac{X_{2}w_{1}}{w_{2}}
+    \end{equation}</script>
+
+<p>Ya contamos con <script type="math/tex">Y_{1}, Y_{2}</script> que las hemos estimado dependiendo de la información que nos den nuestros datos y con los valores asignaos inicialmente para <script type="math/tex">X_{1}, X_{2},</script>. Nos podemos dar a la tarea de representar esta información por medio de una linea cuyo objetivo es dividir los dos tipos de datos que tenemos en dicho ejemplo.</p>
+
+<iframe width="600" height="720" src="https://gergodfrey.github.io/D3Proyect/" frameborder="0" allowfullscreen=""></iframe>
+
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/analysic-nabla">analysic-nabla</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
