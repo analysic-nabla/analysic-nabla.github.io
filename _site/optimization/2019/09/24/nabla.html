@@ -22,7 +22,7 @@
 {"description":"La noción de Machine Learning o aprendizaje de máquina en español ha tenido un gran auge en esta última década. Sin embargo, dicho tema puede tener sus inicios desdé hace más de de 50 años, por lo cual nos hemos propuesto a dar una curso didáctico con el objetivo que el lector pueda tener un interés mayor sobre estos temas.","@type":"BlogPosting","headline":"First Paper","dateModified":"2019-09-24T00:00:00-05:00","datePublished":"2019-09-24T00:00:00-05:00","url":"http://localhost:4000/optimization/2019/09/24/nabla.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.jpg"},"name":"Luis Gerardo Godfrey Castañeda"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/optimization/2019/09/24/nabla.html"},"author":{"@type":"Person","name":"Luis Gerardo Godfrey Castañeda"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=e08f768ce3bdc00e11bfa7e3059329d74b7da176">
+    <link rel="stylesheet" href="/assets/css/style.css?v=4a4c07520894a8f94056009bce3dc82be70b024a">
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -79,9 +79,11 @@
 <h3> Ecuación de costos</h3>
 <p>Esta función sera nuestra principal herramienta, nuestro interés principal es que el valor sea el más bajo posible, por lo cuál tendremos que derivar pero no antes de explicar sus elementos.</p>
 
-<script type="math/tex; mode=display">\begin{equation}\label{F_Costos}
+<!-- $$
+    \begin{equation}\label{F_Costos}
         L(y,\hat{y})= \sum_{n=1}^{N}y_{n} \log \hat{y}_{n} + (1-y_{n}) \log(1-\hat{y}_{n}) \forall y \in {0,1}
-    \end{equation}</script>
+    \end{equation}
+$$ -->
 
 <p>En tenemos <script type="math/tex">\hat{y}</script> la cuál es nuestra estimación del valor y, con la fórmula:</p>
 
@@ -97,9 +99,11 @@
 
 <p>Sustituyendo  <strong>__</strong>_ en <strong>__</strong> tenemos:</p>
 
-<script type="math/tex; mode=display">\begin{equation}\label{F_Costos_Sustitucion}
+<!-- $$
+    \begin{equation}\label{F_Costos_Sustitucion}
     L(y,\hat{y})= \sum_{n=1}^{N}y_{n} \log \frac{1}{(1 + \exp(z))} + (1-y_{n}) \log(1- \frac{1}{(1 + \exp(z))})
-    \end{equation}</script>
+    \end{equation}
+$$ -->
 
 <p>Nuestro interés principal es encontrar el menor costo posible, lo cuál indica que por propiedades necesitamos minimizar dicha función. En otras palabras, tenemos que derivar la función de costos con base en cada una de las variables <script type="math/tex">w_{0}, w_{1}, w_{2}</script> (todas con valores aleatorios iniciales).</p>
 
@@ -146,7 +150,7 @@
 
 <p>Ya contamos con <script type="math/tex">Y_{1}, Y_{2}</script> que las hemos estimado dependiendo de la información que nos den nuestros datos y con los valores asignaos inicialmente para <script type="math/tex">X_{1}, X_{2},</script>. Nos podemos dar a la tarea de representar esta información por medio de una linea cuyo objetivo es dividir los dos tipos de datos que tenemos en dicho ejemplo.</p>
 
-<iframe frameborder="0" style="height:120vh; width:130%" scrolling="no" src="https://gergodfrey.github.io/D3Proyect/"></iframe>
+<iframe frameborder="0" style="height:100vh; width:100%" scrolling="no" src="https://gergodfrey.github.io/D3Proyect/"></iframe>
 
 <!-- <iframe width="600" height="600" src="https://gergodfrey.github.io/D3Proyect/" frameborder="0" allowfullscreen></iframe> -->
 
